@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 27, 2021 at 08:57 AM
+-- Generation Time: Jun 27, 2021 at 11:35 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.1
 
@@ -96,7 +96,7 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`cust_id`, `cust_username`, `cust_pass`, `cust_name`, `cust_addr`, `cust_email`, `cust_image`, `cust_phone`, `cust_balance`) VALUES
-(8, 'arshdeep', 12345, 'Arshdeep Singh', 'A4-405 adora akshaya homes', 'arshdeepdgreat@gmail.com', '../templates/images/cust_dp/arshdeep dp.png', 8754541603, 850000),
+(8, 'arshdeep', 12345, 'Arshdeep Singh', 'A4-405 adora akshaya homes', 'arshdeepdgreat@gmail.com', '../templates/images/cust_dp/arshdeep dp.png', 8754541603, 750000),
 (9, 'ayushma', 12345, 'Ayushma Joshi', 'Nepal', 'ayushmajoshi123@gmail.com', '../templates/images/cust_dp/ayushma.png', 9860834115, 1900000),
 (10, 'gurleen', 12345, 'Gurleen Kaur', 'Jaipur', 'gurleen@gmail.com', '../templates/images/cust_dp/Annotation 2021-05-25 223131.png', 9000000000, 10000);
 
@@ -132,7 +132,8 @@ INSERT INTO `product` (`product_id`, `cat_id`, `seller_id`, `product_name`, `pro
 (20, 409, 15, 'Compass ', 30000, '../templates/images/products/compass.jpg', '2021-05-27 18:18:46', 1, 'A magnetic compass obtained from a ship over 25 years old'),
 (21, 411, 15, 'Roman Coins', 10000, '../templates/images/products/roman.jpg', '2021-05-27 18:18:46', 1, 'All the known pieces of roman currency.The currency is almost 200 years old'),
 (22, 407, 14, 'Antique Pistol ', 150000, '../templates/images/products/maxresdefault.jpg', '2021-05-27 18:18:46', 2, 'A percussion antique handheld pistol that can fire at very high speeds.'),
-(23, 410, 14, 'Xing Dyanasty Jar', 110000, '../templates/images/products/x.jpg', '2021-05-27 18:18:46', 1, 'This is a well preserved Antique jar from Xing Dyanasty With very nice designs and intricate patterns');
+(23, 410, 14, 'Xing Dyanasty Jar', 110000, '../templates/images/products/x.jpg', '2021-05-27 18:18:46', 1, 'This is a well preserved Antique jar from Xing Dyanasty With very nice designs and intricate patterns'),
+(24, 409, 14, 'Old Fax machine', 100000, '../templates/images/products/istockphoto-121101829-1024x1024.jpg', '2021-06-27 09:14:49', 2, 'This is an old fax machine which is in working condition.');
 
 -- --------------------------------------------------------
 
@@ -158,7 +159,8 @@ CREATE TABLE `sellers` (
 
 INSERT INTO `sellers` (`seller_id`, `seller_username`, `seller_name`, `seller_pass`, `seller_img`, `seller_email`, `seller_phone`, `seller_addr`, `seller_aadhar`) VALUES
 (14, 'arshdeep', 'Arshdeep Singh', 'arshdeep123', '../templates/images/seller_dps/arshdeep dp.png', 'arshdeepdgreat@gmail.com', 8754541603, 'A4-405 adora akshaya homes', 601320981143),
-(15, 'gurleen', 'Gurleen Kaur', 'gurleen123', '../templates/images/seller_dps/gurleendp.png', 'gurleen3@gmail.com', 9111111111, 'Bungalow #13, Street #5,Jaipur', 283958832292);
+(15, 'gurleen', 'Gurleen Kaur', 'gurleen123', '../templates/images/seller_dps/gurleendp.png', 'gurleen3@gmail.com', 9111111111, 'Bungalow #13, Street #5,Jaipur', 283958832292),
+(16, 'jack', 'Jack Dawson', '12345', '../templates/images/seller_dps/jack.jpg', 'jack@gmail.com', 9888888877, 'house #5,street #8,chennai,Tamilnadu', 909378425635);
 
 -- --------------------------------------------------------
 
@@ -180,7 +182,8 @@ CREATE TABLE `transactions` (
 --
 
 INSERT INTO `transactions` (`cust_id`, `seller_id`, `timestamp`, `trans_id`, `product_id`, `Total`) VALUES
-(8, 14, '2021-06-27 06:11:35', 3, 22, 150000);
+(8, 14, '2021-06-27 06:11:35', 3, 22, 150000),
+(8, 14, '2021-06-27 09:18:20', 4, 24, 100000);
 
 --
 -- Indexes for dumped tables
@@ -256,19 +259,19 @@ ALTER TABLE `customers`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `product_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `sellers`
 --
 ALTER TABLE `sellers`
-  MODIFY `seller_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `seller_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `transactions`
 --
 ALTER TABLE `transactions`
-  MODIFY `trans_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `trans_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
