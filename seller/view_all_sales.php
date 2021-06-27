@@ -62,8 +62,8 @@
                           <img class="right" src="<?php print_r($row3['product_img']); ?>" height="100px">
                         <div>
                           <h5>Price: <?php echo $p['Total'];?></h5>
-                          <h7>Seller ID: <?php echo $p['seller_id'];?></h7>
-                          <h6> Timestamp: <?php echo $p['timestamp'];?></h6>
+                          <h7>Customer ID: <?php echo $p['cust_id'];?></h7>
+                          <h6>Timestamp: <?php echo $p['timestamp'];?></h6>
                           <br>
                           </div>
                         </div>

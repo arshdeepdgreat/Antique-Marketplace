@@ -70,6 +70,16 @@ if ($_SESSION['SELLER_LOGIN']!='yes' or $_SESSION['SELLER_ID']=="")
         }
 
     </style>
+    <script type="text/javascript">
+        function myFunction() {
+        var x = document.getElementById("mypass");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+    </script>
     <title>Product | edit details</title>
 </head>
 <body>
@@ -115,8 +125,14 @@ if ($_SESSION['SELLER_LOGIN']!='yes' or $_SESSION['SELLER_ID']=="")
      <input type="text" name="product_desc" value='<?php echo $prod_desc?>' required>
 
      <label style="font-size:18px; color:black;">Enter Password to verify</label>
-     <input type="password" name="password" value='' required>
+     <input type="password" name="password" value='' required id="mypass">
      <div class="centre red-text"><?php echo $errpass ?></div>
+     <p>
+      <label>
+        <input type="checkbox" onclick="myFunction();"/>
+        <span>Show Password</span>
+      </label>
+     </p>
      <br>
 
      <div class="center">

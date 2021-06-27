@@ -68,6 +68,7 @@
                           <div>
                           <img src="<?php echo $cat['cat_image'];?>" height=200px >
                           <br>
+                          <h6><?php print_r($cat['cat_description']);?></h6>
                           <a href="All_products.php?cat_id=<?php echo $cat['cat_id'];?>" class="btn brand z-depth-0">View more...</a>
                           </div>
                         </div>

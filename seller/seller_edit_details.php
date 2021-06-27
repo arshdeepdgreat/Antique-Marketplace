@@ -55,6 +55,16 @@
         }
 
     </style>
+    <script type="text/javascript">
+        function myFunction() {
+        var x = document.getElementById("mypass");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+    </script>
     <title> seller | edit details</title>
 </head>
 <body>
@@ -83,8 +93,14 @@
      <input type="text" name="seller_addr" value='<?php echo $seller_addr?>' required>
 
      <label style="font-size:18px; color:black;">Enter Password to verify</label>
-     <input type="password" name="password" value='' required>
+     <input type="password" name="password" value='' required id="mypass">
      <div class="centre red-text"><?php echo $errpass ?></div>
+     <p>
+      <label>
+        <input type="checkbox" onclick="myFunction();"/>
+        <span>Show Password</span>
+      </label>
+     </p>
      <br>
 
      <div class="center">

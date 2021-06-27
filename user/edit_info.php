@@ -57,6 +57,16 @@ if(isset($_POST['submit'])){
         }
 
     </style>
+    <script type="text/javascript">
+        function myFunction() {
+        var x = document.getElementById("mypass");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+    </script>
     <title> User onboarding</title>
 </head>
 <body>
@@ -77,7 +87,7 @@ if(isset($_POST['submit'])){
 <!-- <h1 class="center white-text"><?php echo $message;?></h1> -->
  <form class="white" method="POST" enctype="multipart/form-data">
      
-     <label style="font-size:18px; color:black;">Set new Balance</label>
+     <label style="font-size:18px; color:black;">Set new Balance(demo purpose ideally we would link to a bank account)</label>
      <input type="number" name="user_balance" value='<?php echo $user_balance?>' required min=10000>
      <div class="centre red-text"><?php echo $errbal; ?></div>
 
@@ -89,8 +99,15 @@ if(isset($_POST['submit'])){
      <input type="text" name="user_addr" value='<?php echo $user_addr?>' required>
 
      <label style="font-size:18px; color:black;">Enter Password to verify</label>
-     <input type="password" name="password" value='' required>
+     <input type="password" name="password" value='' required id="mypass">
      <div class="centre red-text"><?php echo $errpass ?></div>
+     <p>
+      <label>
+        <input type="checkbox" onclick="myFunction();"/>
+        <span>Show Password</span>
+      </label>
+    </p>
+
      <br>
 
      <div class="center">
