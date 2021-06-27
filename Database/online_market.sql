@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.3
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 26, 2021 at 09:00 AM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.4.11
+-- Generation Time: Jun 27, 2021 at 08:57 AM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 8.0.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -43,7 +43,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`admin_name`, `admin_phone`, `admin_id`, `admin_pass`, `admin_username`, `admin_image`, `admin_email`, `admin_addr`) VALUES
-('Arshdeep', 9840037871, 1, 'admin', 'admin', '..\\templates\\images\\admin\\pass_photo.jpg', 'arshdeepdgreat@gmail.com', 'A4-405 adora akshaya homes,padur,chennai');
+('Arshdeep', 9840037871, 1, 'admin', 'admin', '..\\templates\\images\\admin\\pass_photo.png', 'arshdeepdgreat@gmail.com', 'A4-405 adora akshaya homes,padur,chennai');
 
 -- --------------------------------------------------------
 
@@ -64,13 +64,13 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`cat_id`, `cat_name`, `cat_image`, `cat_status`, `cat_description`) VALUES
-(300, 'Paintings', '..\\templates\\images\\categories\\painting.jpg', 1, 'paintings ranging from 10,000 to upwards of 2 lakh'),
-(404, 'Others', '..\\templates\\images\\categories\\other.jpg', 1, 'some random text to decribe the category others ...acts as a dump if dont fit in any other categories'),
-(405, 'Watches', '..\\templates\\images\\categories\\watch.jpg', 1, 'DESIGNER AND RARE WATCHES '),
-(406, 'Sculptures', '..\\templates\\images\\categories\\sculpture.jpg', 1, 'beautiful sculptures of priceless value'),
-(407, 'Weaponry', '../templates/images/categories/weapons.jpg', 1, 'ancient weapons of historical significance'),
+(300, 'Paintings', '..\\templates\\images\\categories\\painting.jpg', 1, 'Paintings ranging from 10,000 to upwards of 2 lakh'),
+(404, 'Others', '..\\templates\\images\\categories\\other.jpg', 1, 'A category of Miscellaneous good that dont fit in the other categories'),
+(405, 'Watches', '..\\templates\\images\\categories\\watch.jpg', 1, 'Extremely rare and antique watches which have immense value.'),
+(406, 'Sculptures', '..\\templates\\images\\categories\\sculpture.jpg', 1, 'Beautiful sculptures of priceless value'),
+(407, 'Weaponry', '../templates/images/categories/weapons.jpg', 1, 'Ancient weapons of historical significance'),
 (409, 'Retro technology', '../templates/images/categories/retro-tech-sounds.jpg', 1, 'A look back at technological devices.'),
-(410, 'Ancient Cutlery', '../templates/images/categories/MA_00564338_k0cm4d.jpg', 1, 'old cutlery used by rulers of famous dynasties or famous people'),
+(410, 'Ancient Cutlery', '../templates/images/categories/MA_00564338_k0cm4d.jpg', 1, 'Old cutlery used by rulers of famous dynasties or famous people'),
 (411, 'Currency pieces', '../templates/images/categories/img_coin.png', 1, 'Enthusiasts have been known to collect old and outdated currency as a symbol of historic significance');
 
 -- --------------------------------------------------------
@@ -96,7 +96,7 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`cust_id`, `cust_username`, `cust_pass`, `cust_name`, `cust_addr`, `cust_email`, `cust_image`, `cust_phone`, `cust_balance`) VALUES
-(8, 'arshdeep', 12345, 'Arshdeep Singh', 'A4-405 adora akshaya homes', 'arshdeepdgreat@gmail.com', '../templates/images/cust_dp/arshdeep dp.png', 8754541603, 10000),
+(8, 'arshdeep', 12345, 'Arshdeep Singh', 'A4-405 adora akshaya homes', 'arshdeepdgreat@gmail.com', '../templates/images/cust_dp/arshdeep dp.png', 8754541603, 850000),
 (9, 'ayushma', 12345, 'Ayushma Joshi', 'Nepal', 'ayushmajoshi123@gmail.com', '../templates/images/cust_dp/ayushma.png', 9860834115, 1900000),
 (10, 'gurleen', 12345, 'Gurleen Kaur', 'Jaipur', 'gurleen@gmail.com', '../templates/images/cust_dp/Annotation 2021-05-25 223131.png', 9000000000, 10000);
 
@@ -131,7 +131,7 @@ INSERT INTO `product` (`product_id`, `cat_id`, `seller_id`, `product_name`, `pro
 (19, 405, 15, 'Antique watch', 2000000, '../templates/images/products/watch ant.jpg', '2021-05-27 18:18:46', 1, 'This is a pocket watch which is almost 30 yrs old and is in working condition.'),
 (20, 409, 15, 'Compass ', 30000, '../templates/images/products/compass.jpg', '2021-05-27 18:18:46', 1, 'A magnetic compass obtained from a ship over 25 years old'),
 (21, 411, 15, 'Roman Coins', 10000, '../templates/images/products/roman.jpg', '2021-05-27 18:18:46', 1, 'All the known pieces of roman currency.The currency is almost 200 years old'),
-(22, 407, 14, 'Antique Pistol ', 150000, '../templates/images/products/maxresdefault.jpg', '2021-05-27 18:18:46', 1, 'A percussion antique handheld pistol that can fire at very high speeds.'),
+(22, 407, 14, 'Antique Pistol ', 150000, '../templates/images/products/maxresdefault.jpg', '2021-05-27 18:18:46', 2, 'A percussion antique handheld pistol that can fire at very high speeds.'),
 (23, 410, 14, 'Xing Dyanasty Jar', 110000, '../templates/images/products/x.jpg', '2021-05-27 18:18:46', 1, 'This is a well preserved Antique jar from Xing Dyanasty With very nice designs and intricate patterns');
 
 -- --------------------------------------------------------
@@ -149,7 +149,7 @@ CREATE TABLE `sellers` (
   `seller_email` varchar(100) NOT NULL,
   `seller_phone` bigint(12) NOT NULL,
   `seller_addr` text NOT NULL,
-  `seller_aadhar` int(10) NOT NULL
+  `seller_aadhar` bigint(12) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -157,8 +157,8 @@ CREATE TABLE `sellers` (
 --
 
 INSERT INTO `sellers` (`seller_id`, `seller_username`, `seller_name`, `seller_pass`, `seller_img`, `seller_email`, `seller_phone`, `seller_addr`, `seller_aadhar`) VALUES
-(14, 'arshdeep', 'Arshdeep Singh', '12345', '../templates/images/seller_dps/arshdeep dp.png', 'arshdeepdgreat@gmail.com', 8754541603, 'A4-405 adora akshaya homes', 2147483647),
-(15, 'ayushma_j', 'Ayushma Joshi', '12345', '../templates/images/seller_dps/Annotation 2021-05-25 215425.png', 'Ayushmajoshi@gmail.com', 9111111111, 'Kathmandu,Nepal', 2147483647);
+(14, 'arshdeep', 'Arshdeep Singh', 'arshdeep123', '../templates/images/seller_dps/arshdeep dp.png', 'arshdeepdgreat@gmail.com', 8754541603, 'A4-405 adora akshaya homes', 601320981143),
+(15, 'gurleen', 'Gurleen Kaur', 'gurleen123', '../templates/images/seller_dps/gurleendp.png', 'gurleen3@gmail.com', 9111111111, 'Bungalow #13, Street #5,Jaipur', 283958832292);
 
 -- --------------------------------------------------------
 
@@ -174,6 +174,13 @@ CREATE TABLE `transactions` (
   `product_id` int(5) NOT NULL,
   `Total` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `transactions`
+--
+
+INSERT INTO `transactions` (`cust_id`, `seller_id`, `timestamp`, `trans_id`, `product_id`, `Total`) VALUES
+(8, 14, '2021-06-27 06:11:35', 3, 22, 150000);
 
 --
 -- Indexes for dumped tables
@@ -261,7 +268,7 @@ ALTER TABLE `sellers`
 -- AUTO_INCREMENT for table `transactions`
 --
 ALTER TABLE `transactions`
-  MODIFY `trans_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `trans_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables

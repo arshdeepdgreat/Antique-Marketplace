@@ -21,7 +21,7 @@
         }
         else{
             $mes="Success Your order has been placed";
-            sleep(5);
+            //sleep(5);
         }
         // print_r($prods);
     }
