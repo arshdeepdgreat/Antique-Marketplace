@@ -33,8 +33,8 @@ else{
     <title>LOGIN</title>
     <link rel="stylesheet" href="templates/stylesheet.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <!-- <style>
-        form{/*1
+    <style>
+        form{
 			max-width: 800px;
 			margin: 100px;
 			padding: 20px;
@@ -43,9 +43,19 @@ else{
             background-image: url('../templates/images/bg_theme.jpg');
         }
 
-    </style> -->
+    </style>
+    <script type="text/javascript">
+        function myFunction() {
+        var x = document.getElementById("mypass");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+    </script>
 </head>
-<body>
+<body class="grey lighten-4" >
     <nav class="black z-depth-0">
 		<div class ="container">
 			<a href="../index.php" class="brand-logo brand-text hide-on-med-and-down ">Collectors Marketplace</a>
@@ -55,49 +65,35 @@ else{
 			</ul>
 		</div>
 	</nav>
-    <section>
-        <div class = "imgBx">
-            <img src = "bg_theme.jpg">
-        </div>
-        <div class = "contentBx">
-            <div class="formBx">
-                <h2>Login </h2>
-                <form>
-                    <div class ="inputBx">
-                        <span>Username</span>
-                        <input type="text" name="">
-                    </div>
-                    <div class ="inputBx">
-                        <span>Password</span>
-                        <input type="text" name="">
-                    </div> 
-                </form>
-        </div>
-        </div>
-        <section>
-    <!-- <section class="container grey-text" > -->
-        <!-- <h4 class="center white-text" style="background-color:black; border-radius=30px;">USER LOGIN</h4> -->
-<!--  -->
- <!-- <form class="white" method="POST"> -->
-     <!--  -->
-     <!-- <label style="font-size:18px; color:black;">Username</label> -->
-     <!-- <input type="text" name="username" value='' required> -->
-   <!--  -->
-<!--  -->
-     <!-- <label style="font-size:18px; color:black;">Password</label> -->
-     <!-- <input type="password" name="password" value='' required> -->
-     <!-- <div class="centre red-text"><?php echo $msg ?></div> -->
-<!--  -->
-     <!-- <div class="center"> -->
-         <!-- <input type="submit" name="submit" value="Sign in" class="btn brand z-depth-0"></input> -->
-     <!-- </div> -->
-     <!-- <div class="center"> -->
-        <!-- <br> -->
-     <!-- <a href="user_signup.php" class="btn">Create a new account</a> -->
-    <!-- </div> -->
- <!-- </form> -->
-<!-- </section> -->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
+    <section class="container grey-text" >
+        <h4 class="center white-text" style="background-color:black; border-radius=30px;">USER LOGIN</h4>
+
+ <form class="white" method="POST">
+     
+     <label style="font-size:18px; color:black;">Username</label>
+     <input type="text" name="username" value='' required>
+   
+
+     <label style="font-size:18px; color:black;">Password</label>
+     <input type="password" name="password" value='' id="mypass" required>
+     <div class="centre red-text"><?php echo $msg ?></div>
+     <p>
+      <label>
+        <input type="checkbox" onclick="myFunction();"/>
+        <span>Show Password</span>
+      </label>
+    </p>
+
+     <div class="center">
+         <input type="submit" name="submit" value="Sign in" class="btn brand z-depth-0"></input>
+     </div>
+     <div class="center">
+        <br>
+     <a href="user_signup.php" class="btn">Create a new account</a>
+    </div>
+ </form>
+</section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
             
 </body>
 </html>

@@ -43,6 +43,16 @@ else{
         }
 
     </style>
+    <script type="text/javascript">
+        function myFunction() {
+        var x = document.getElementById("mypass");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+    </script>
 </head>
 <body class="grey lighten-4" >
     <nav class="black">
@@ -64,9 +74,14 @@ else{
    
 
      <label style="font-size:18px; color:black;">Password</label>
-     <input type="password" name="password" value='' required>
+     <input type="password" name="password" value='' id="mypass" required>
      <div class="centre red-text"><?php echo $msg ?></div>
-
+     <p>
+      <label>
+        <input type="checkbox" onclick="myFunction();"/>
+        <span>Show Password</span>
+      </label>
+    </p>
      <div class="center">
          <input type="submit" name="submit" value="Sign in" class="btn brand z-depth-0"></input>
      </div>
